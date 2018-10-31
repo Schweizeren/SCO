@@ -46,6 +46,19 @@ public class Tester
             System.out.println(teacher.toString());
         }
     } 
+    
+    public void assignmentThreeTest()
+    {
+        
+        
+        
+        
+        List<Student> students = new ArrayList<>();
+        //students.add(new Student)("301", "Adam Johnson", "AdamBoy21@student.dk" , 
+        
+        //(int id, String name, String email, String education, int Grade)
+        
+    }
 }
 
     
