@@ -13,6 +13,7 @@ public class JohnnyBravo
 {
 
     private int pokemon;
+    private int yoyoyo;
     /**
      * @param args the command line arguments
      */
