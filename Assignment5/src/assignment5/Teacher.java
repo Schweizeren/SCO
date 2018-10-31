@@ -14,13 +14,13 @@ import java.util.List;
  */
 public class Teacher extends Person
 {
-    ArrayList<String> subjects = new ArrayList<String>();
+    static ArrayList<String> subjects = new ArrayList<String>();
     private String initials;
     private double salary;
 
     public Teacher(int id, String name, String email, String initials, ArrayList<String> subjects)
     {
-        super(id, name);
+        super(id, name, email);
         this.initials = initials;
     }
     
@@ -50,12 +50,13 @@ public class Teacher extends Person
     {
         subjects.add(subject);
         
+        
     }
 
     @Override
     public String toString()
     {
-        return "Teacher{" + "id= " + id + " NAME= " + name + " EMAIL= " + email + " INITIALS= " + initials + " subjects= " + subjects + '}';
+        return "Teacher: id= " + id + " name= " + name + " email= " + email + " initials= " + initials + " subjects= " + subjects;
     }
 
     

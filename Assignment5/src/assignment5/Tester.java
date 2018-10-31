@@ -31,21 +31,21 @@ public class Tester
     
     public void assignmentTwoTest()
     {
-        ArrayList<String> subjects = new ArrayList<String>();
-        subjects.add("Danish");
-        subjects.add("English");
-        subjects.add("History");
+        Teacher.subjects.add("danish");
+        Teacher.subjects.add("History");
+        Teacher.subjects.add("danish");
                 
         
         List<Teacher> teachers = new ArrayList<>();
-        teachers.add(new Teacher("bjp",201,"BjarneJP@email.dk","Bjarne JP", English));
-        teachers.add(new Teacher("bjt",202,"BjarneJP@email.dk","Bjarne JT", History));
-        teachers.add(new Teacher("bjn",203,"BjarneJP@email.dk","Bjarne JN", Danish));
+        teachers.add(new Teacher(201,"Bjarne JP","BjarneJP@email.dk","BJP",Teacher.subjects));
+        teachers.add(new Teacher(202,"Bjarne JT","BjarneJT@email.dk","BJT",Teacher.subjects));
+        teachers.add(new Teacher(203,"Bjarne JN","BjarneJN@email.dk","BJN",Teacher.subjects));
         
         for (Teacher teacher : teachers)
         {
             System.out.println(teacher.toString());
         }
-    }   
-    
+    } 
 }
+
+    
