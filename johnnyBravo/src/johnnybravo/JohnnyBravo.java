@@ -12,6 +12,7 @@ package johnnybravo;
 public class JohnnyBravo
 {
 
+    private int pokemon;
     /**
      * @param args the command line arguments
      */
