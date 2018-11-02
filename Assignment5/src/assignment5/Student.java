@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class Student extends Person
 {
-    ArrayList<GradeInfo> GradeInfo = new ArrayList<>;
+    ArrayList<GradeInfo> gradeReport = new ArrayList<GradeInfo>();
     private String education;
     
     public Student(String education, int id, String name, String email) {
@@ -29,25 +29,29 @@ public class Student extends Person
         
         public double getAverageGrade()
         {
-            return AverageGrade;
+            double average = 0;
+            for (GradeInfo gradeInfo : gradeReport)
+            {
+                gradeInfo.getGrade();
+                average = average + gradeInfo.getGrade();
+            }
+            return average / gradeReport.size();
         }
        
-        public int getGrade(grade : GradeInfo)
+        public int getGrade(String subject)
         {
-            return Grade;
+            for (GradeInfo grade : gradeReport)
+            {
+                if (grade.getSubject() == subject)
+                {
+                    return grade.getGrade();
+                }
+            }
+            return -1;
         }
         
-        public void addGrade(grade : GradeInfo)
+        public void addGrade(GradeInfo grade)
         {
-            gradeReport.add(GradeInfo);
             
         }
-
-        
-        
-        
-        
-    }
-    
-    
 }

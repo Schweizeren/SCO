@@ -11,29 +11,24 @@ package assignment5;
  */
 public class GradeInfo 
 {
-    private String subject;
+    public String subject;
     public int grade;
     
     public GradeInfo(String subject, int grade)
     {   
-        
-        public String getSubject()
-        {
-            return subject;
-        }
-        
-        public  int getGrade() 
-        {
-            return grade;
-        }
-        
-      
+       
     
     }
+    
+    public String getSubject()
+    {
+        return subject;
+    }
+        
+    public  int getGrade() 
+    {
+        return grade;
+    }
 
-    
-    
-    
-    
     
 }
