@@ -52,6 +52,6 @@ public class Student extends Person
         
         public void addGrade(GradeInfo grade)
         {
-            
+            gradeReport.add(grade);
         }
 }

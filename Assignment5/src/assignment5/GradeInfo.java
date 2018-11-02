@@ -13,12 +13,14 @@ public class GradeInfo
 {
     public String subject;
     public int grade;
-    
+
     public GradeInfo(String subject, int grade)
-    {   
-       
-    
+    {
+        this.subject = subject;
+        this.grade = grade;
     }
+    
+    
     
     public String getSubject()
     {
@@ -30,5 +32,12 @@ public class GradeInfo
         return grade;
     }
 
+    @Override
+    public String toString()
+    {
+        return "GradeInfo{" + "subject=" + subject + ", grade=" + grade + '}';
+    }
     
+    
+   
 }
