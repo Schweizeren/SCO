@@ -27,7 +27,7 @@ public class GradeInfo
         return subject;
     }
         
-    public  int getGrade() 
+    public int getGrade() 
     {
         return grade;
     }
