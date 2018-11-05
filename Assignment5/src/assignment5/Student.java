@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class Student extends Person
 {
-    ArrayList<GradeInfo> GradeInfo = new ArrayList<>;
+    ArrayList<GradeInfo> gradeReport = new ArrayList<GradeInfo>();
     private String education;
     
     public Student(String education, int id, String name, String email) {
@@ -17,37 +17,49 @@ public class Student extends Person
         this.education = education;
     }
         
-        public List<GradeInfo> getGradeReport() 
-        {
-            return gradeReport;
-        }
-
-        public String getEducation() 
-        {
-            return education;  
-        }
-        
-        public double getAverageGrade()
-        {
-            return AverageGrade;
-        }
-       
-        public int getGrade(grade : GradeInfo)
-        {
-            return Grade;
-        }
-        
-        public void addGrade(grade : GradeInfo)
-        {
-            gradeReport.add(GradeInfo);
-            
-        }
-
-        
-        
-        
-        
+    public List<GradeInfo> getGradeReport() 
+    {
+        return gradeReport;
     }
-    
-    
+
+    public String getEducation() 
+    {
+        return education;  
+    }
+        
+    public double getAverageGrade()
+    {
+        double average = 0;
+        for (GradeInfo gradeInfo : gradeReport)
+        {
+            gradeInfo.getGrade();
+            average = average + gradeInfo.getGrade();
+        }
+        return average / gradeReport.size();
+    }
+   
+    public int getGrade(String subject)
+    {
+        for (GradeInfo grade : gradeReport)
+        {
+            if (grade.getSubject() == subject)
+            {
+                return grade.getGrade();
+            }
+        }
+        return -1;
+    }
+        
+    public void addGrade(String subject, int grade)
+    {
+        GradeInfo gradeSub = new GradeInfo(subject, grade);
+        gradeReport.add(gradeSub);
+    }
+
+        @Override
+        public String toString()
+        {
+            return "Student{" + "gradeReport=" + gradeReport + ", education=" + education + '}';
+        }
+        
 }

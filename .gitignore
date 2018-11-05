@@ -25,3 +25,5 @@ hs_err_pid*
 /johnnyBravo/dist/
 /johnnyBravo/build/
 /Assignment5/dist/
+Assignment5/build/built-jar.properties
+Assignment5/nbproject/private/private.properties
