@@ -34,23 +34,35 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room mainhall, wc, kitchen, hallway, smallbedroom, masterbedroom, WC, diningroom, basement, cell, dungeonhallway;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
-        
+        mainhall = new Room("The Main Hall");
+        wc = new Room("The Small Toilet");
+        kitchen = new Room("The Kitchen");
+        hallway = new Room("The Hallway to the sleeping quarters");
+        smallbedroom = new Room("The Small Bedroom");
+        masterbedroom = new Room("masterbedroom");
+        WC = new Room("The Big Toilet");
+        diningroom = new Room("The Dining Room");
+        basement = new Room("The Basement");
+        cell = new Room("The Prison Cell");
+        dungeonhallway = new Room("A hallway to something sinister");
         // initialise room exits
-        outside.setExits(null, theater, lab, pub);
-        theater.setExits(null, null, null, outside);
-        pub.setExits(null, outside, null, null);
-        lab.setExits(outside, office, null, null);
-        office.setExits(null, null, null, lab);
-
-        currentRoom = outside;  // start game outside
+        // (Room north, Room east, Room south, Room west)
+        
+        mainhall.setExits(wc,kitchen,null,hallway);
+        wc.setExits(null,null,mainhall,null);
+        hallway.setExits(smallbedroom,mainhall,null,null); // Lav fobindelse til basement
+        smallbedroom.setExits(masterbedroom,WC,hallway,null);
+        masterbedroom.setExits(null,null,smallbedroom,null);
+        WC.setExits(null,null,null,smallbedroom);
+        kitchen.setExits(diningroom,null,null,mainhall);
+        diningroom.setExits(null,null,kitchen,null);
+        basement.setExits(null,cell,null,null); // Lav fobindelse til hallway
+        cell.setExits(null,dungeonhallway,null,basement);
+        dungeonhallway.setExits(null,null,null,cell);
+        currentRoom = mainhall;  // start game outside
     }
 
     /**
@@ -176,7 +188,7 @@ public class Game
         }
         else {
             currentRoom = nextRoom;
-            System.out.println("You are " + currentRoom.getDescription());
+            System.out.println("You are in " + currentRoom.getDescription());
             System.out.print("Exits: ");
             if(currentRoom.northExit != null) {
                 System.out.print("north ");
