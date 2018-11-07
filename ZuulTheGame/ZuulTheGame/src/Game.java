@@ -34,7 +34,7 @@ public class Game
      */
     private void createRooms()
     {
-        Room mainhall, wc, kitchen, hallway, smallbedroom, masterbedroom, WC, diningroom, basement, cell, dungeonhallway;
+        Room mainhall, wc, kitchen, hallway, smallbedroom, masterbedroom, WC, diningroom, basement, cell, dungeonhallway, room1, room2, room3, room4,  room5,  room6,  room7,  room8,  room9, room10, room11, room12, room13;
       
         // create the rooms
         mainhall = new Room("The Main Hall");
@@ -48,6 +48,22 @@ public class Game
         basement = new Room("The Basement");
         cell = new Room("The Prison Cell");
         dungeonhallway = new Room("A hallway to something sinister");
+        room1 = new Room("a Sinister Room");
+        room2 = new Room("a Sinister Room");
+        room3 = new Room("a Sinister Room");
+        room4 = new Room("a Sinister Room");
+        room5 = new Room("a Sinister Room");
+        room6 = new Room("a Sinister Room");
+        room7 = new Room("a Sinister Room");
+        room8 = new Room("a Sinister Room");
+        room9 = new Room("a Sinister Room");
+        room10 = new Room("a Sinister Room");
+        room11 = new Room("a Sinister Room");
+        room12 = new Room("a Sinister Room");
+        room13 = new Room("an angelic Room");
+        
+        
+        
         // initialise room exits
         // (Room north, Room east, Room south, Room west)
         
@@ -61,7 +77,21 @@ public class Game
         diningroom.setExits(null,null,kitchen,null);
         basement.setExits(null,cell,null,null); // Lav fobindelse til hallway
         cell.setExits(null,dungeonhallway,null,basement);
-        dungeonhallway.setExits(null,null,null,cell);
+        dungeonhallway.setExits(room2,room1,null,cell);
+        room1.setExits(room3,null,null,dungeonhallway);
+        room2.setExits(room4,room3,dungeonhallway,null);
+        room3.setExits(null,null,room1,room2);
+        room4.setExits(room5,room6,room2,null);
+        room5.setExits(null,null,room4,null);
+        room6.setExits(null,room7,null,room4);
+        room7.setExits(room8,null,room9,room6);
+        room8.setExits(null,null,room7,null);
+        room9.setExits(room7,null,room10,null);
+        room10.setExits(room9,room11,null,null);
+        room11.setExits(room12,null,null,room10);
+        room12.setExits(room13,null,room11,null);
+        room13.setExits(null,null,room12,null);
+        
         currentRoom = mainhall;  // start game outside
     }
 
