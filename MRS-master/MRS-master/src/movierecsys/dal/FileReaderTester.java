@@ -106,7 +106,7 @@ public class FileReaderTester
                 if (counter % 1000 == 0)
                 {
                     st.executeBatch();
-                    System.out.println(counter);
+                    System.out.println("Added " + counter);
                 }
             }
             if (counter % 1000 != 0)
