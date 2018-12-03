@@ -40,7 +40,7 @@ public class MovieDbDao implements IMovieRepository
     {
         SQLServerDataSource ds = new SQLServerDataSource();
         ds.setServerName("10.176.111.31");
-        ds.setDatabaseName("Netflix");
+        ds.setDatabaseName("Tunes");
         ds.setUser("CS2018A_14");
         ds.setPassword("CS2018A_14");
 
