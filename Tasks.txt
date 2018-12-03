@@ -1,0 +1,7 @@
+Autoplay Songs
+Skip Song
+Previous Song
+Playlist
+Add to playlist
+
+https://docs.oracle.com/javafx/2/api/javafx/scene/media/MediaPlayer.html#isAutoPlay()
